@@ -80,15 +80,15 @@ const Experience = () => {
     }, []);
 
     return (
-        <div className='w-full text-center font-Architects relative top-60 px-20'>
+        <div id='experience' className='w-full flex flex-col items-center justify-center px-20 py-24 font-Architects'>
             <h1 ref={experienceRef} className='text-5xl font-extrabold'>Experience</h1>
-            <div className='w-full px-10 py-20'>
+            <div className='w-full flex flex-col items-center justify-center px-10 py-20'>
                 <h1 ref={vimzoRef} className='text-3xl font-bold'>Vizmo</h1>
                 <div className='w-full flex justify-center py-10'>
                     <div ref={logoRef} className='w-1/2 object-cover flex justify-center'>
-                        <img src={vizmo} alt="vizmo" className='w-1/2' />
+                        <img src={vizmo} alt="vizmo" className='w-1/2 drop-shadow-xl' loading='lazy' />
                     </div>
-                    <div ref={textRef} className='w-1/2 px-10 leading-10 flex flex-col justify-center items-start gap-4'>
+                    <div ref={textRef} className='w-1/2 leading-10 flex flex-col justify-center items-start px-20 gap-4'>
                         <h1 className='text-2xl font-medium'>Front-end Developer (Intern)</h1>
                         <p className='text-lg font-medium'>June 2024 - September 2024</p>
                         <h1 className='text-lg font-medium'>Key Responsibilities:</h1>

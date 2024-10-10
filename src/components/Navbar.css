@@ -1,0 +1,4 @@
+ul > li:hover {
+    transform: translateY(-4px);
+    transition: all 0.5s;
+}

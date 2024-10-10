@@ -22,7 +22,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className='relative h-[600px] flex top-20 w-full px-20 font-Architects justify-between items-center'>
+    <div id='home' className='relative flex top-[10vh] w-full px-20 font-Architects justify-between items-center'>
       <div className={`w-1/2 transition-transform relative left-[25%] duration-700 ${swipeImage ? 'animate-slide-left' : 'animate-center'}`}>
         <img src={wallBurst} alt="wallBurst" />
       </div>
