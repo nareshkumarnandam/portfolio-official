@@ -3,8 +3,17 @@ import EmailIcon from "@mui/icons-material/Email";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { Tooltip } from "@mui/material";
+import resume from "../assets/Resume/Naresh_Kumar_Nandam.pdf";
 
 const Contact = () => {
+    const handleDownloadResume = () => {
+        const link = document.createElement("a");
+        link.href = resume;
+        link.setAttribute("download", "Naresh_Kumar_Nandam.pdf");
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      };
   return (
     <div
       id="contact"
@@ -39,6 +48,19 @@ const Contact = () => {
           </a>
         </Tooltip>
       </div>
+      <div className="flex w-full h-full lg:hidden items-center justify-center mt-5">
+                {/* <Button text="Resume" className="bg-black rounded-xl active:scale-95 transition-all text-white w-1/2 h-12" onClick={handleDownloadResume}/>
+                 */}
+                  <Tooltip title="Click to download my Resume" arrow>
+                  <button
+                    className="bg-white rounded-xl active:scale-95 transition-all text-black w-1/2 h-12"
+                    onClick={handleDownloadResume}
+                  >
+                    Resume
+                  </button>
+      
+                  </Tooltip>
+        </div>
     </div>
   );
 };
