@@ -53,7 +53,7 @@ const Contact = () => {
                  */}
                   <Tooltip title="Click to download my Resume" arrow>
                   <button
-                    className="bg-white rounded-xl active:scale-95 transition-all text-black w-1/2 h-12"
+                    className="bg-white rounded-xl active:scale-95 transition-all text-black w-full md:w-1/3 h-12"
                     onClick={handleDownloadResume}
                   >
                     Resume
