@@ -85,7 +85,7 @@ const About = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
     const totalSkills = skills.length;
-    const itemsToShow = 5;
+    const itemsToShow = 5
 
     const nextSlide = () => {
         // Fade out current images
@@ -100,12 +100,12 @@ const About = () => {
 
     const prevSlide = () => {
         // Fade out current images
-        gsap.to(skillRefs.current, { opacity: 0, duration: 0.5, onComplete: () => {
+        gsap.to(skillRefs.current, { opacity: 0, y:20, duration: 0.5, onComplete: () => {
             setCurrentIndex((prevIndex) => 
                 (prevIndex - itemsToShow + totalSkills) % totalSkills
             );
             // Fade in new images
-            gsap.to(skillRefs.current, { opacity: 1, duration: 0.5 });
+            gsap.to(skillRefs.current, { opacity: 1,y:0, duration: 0.5 });
         }});
     };
 
@@ -137,8 +137,8 @@ const About = () => {
             x: 0,
             scrollTrigger: {
               trigger: el,
-              start: 'top 40%',
-              end: 'top 10%',
+              start: 'top 80%',
+              end: 'top 50%',
               scrub: true,
             },
           }
@@ -154,8 +154,8 @@ const About = () => {
             x: 0,
             scrollTrigger: {
               trigger: el,
-              start: 'top 30%',
-              end: 'top 20%',
+              start: 'top 80%',
+              end: 'top 60%',
               scrub: true,
             },
           }
@@ -170,8 +170,8 @@ const About = () => {
           y: 0,
           scrollTrigger: {
             trigger: buttonsRef.current,
-            start: 'top 40%',
-            end: 'top 30%',
+            start: 'top 80%',
+            end: 'top 60%',
             scrub: true,
           },
         }
@@ -186,8 +186,8 @@ const About = () => {
           y: 0,
           scrollTrigger: {
             trigger: skillRefs.current,
-            start: 'top 40%',
-            end: 'top 30%',
+            start: 'top 80%',
+            end: 'top 60%',
             scrub: true,
           },
         }
@@ -200,46 +200,47 @@ const About = () => {
   }, []);
 
   return (
-    <div id='about' ref={aboutRef} className='w-full flex flex-col items-center justify-center px-20 pt-28 font-Architects'>
-      <h1 className='text-5xl font-extrabold'>About Me!</h1>
-      <p className='text-xl font-medium mt-14 px-56 leading-7 tracking-wide'>
-        I’m Naresh Kumar Nandam, a B.Sc graduate in Electronics and Computer Science with a flair for web development! Passionate about crafting eye-catching, user-friendly sites, I love blending tech with creativity. Always on the hunt for the next challenge, ready to turn ideas into digital magic!
+    <div id='about' ref={aboutRef} className='w-full flex flex-col items-center justify-center px-5 lg:px-20 pt-32 font-Architects overflow-hidden'>
+      <h1 className='text-3xl lg:text-5xl font-extrabold'>About Me!</h1>
+      <p className='text-xl font-medium mt-14 lg:px-56 leading-7 tracking-wide'>
+        I’m Naresh Kumar Nandam, a B.Sc graduate in Electronics and Computer Science with a flair for web development! Passionate about crafting eye-catching, user-friendly sites.
+        <br /> I love blending tech with creativity. Always on the hunt for the next challenge, ready to turn ideas into digital magic!
       </p>
       <div className='w-full mt-14 flex flex-col items-center justify-center gap-7'>
-        <h1 ref={el => textRef.current[0] = el} className='text-4xl font-extrabold mb-5'>Education</h1>
-        <div className='flex flex-col gap-20 mt-4 px-10 leading-loose'>
-          <div ref={el => educationRefs.current[0] = el} className='w-full flex justify-between items-center px-40'>
-            <div className='w-1/2 text-left text-2xl font-medium tracking-wide'>
-              <h1 className='text-3xl font-extrabold py-3'>Graduation :</h1>
-              <h1>B.Sc - Electronics and Computer Science</h1>
-              <h1>Aurora's Degree & P.G. College - Chikkadpally</h1>
-              <h1>Osmania University - Hyderabad</h1>
-              <h1>2020 - 2023</h1>
-              <h1>CGPA - 8.14 / 10</h1>
+        <h1 ref={el => textRef.current[0] = el} className='text-3xl lg:text-4xl font-extrabold mb-5'>Education</h1>
+        <div className='flex flex-col gap-20 mt-4 px-2 lg:px-10 leading-loose'>
+          <div ref={el => educationRefs.current[0] = el} className='w-full flex flex-col-reverse md:flex-row justify-between items-center lg:px-40'>
+            <div className='w-full md:w-1/2 text-left text-2xl font-medium tracking-wide'>
+              <h1 className='text-2xl lg:text-3xl font-extrabold py-3'>Graduation :</h1>
+              <h1 className='text-xl lg:text-2xl'>B.Sc - Electronics and Computer Science</h1>
+              <h1 className='text-xl lg:text-2xl'>Aurora's Degree & P.G. College - Chikkadpally</h1>
+              <h1 className='text-xl lg:text-2xl'>Osmania University - Hyderabad</h1>
+              <h1 className='text-xl lg:text-2xl'>2020 - 2023</h1>
+              <h1 className='text-xl lg:text-2xl'>CGPA - 8.14 / 10</h1>
             </div>
             <div className='w-1/2 flex justify-end'>
               <img src={graduation} alt="graduation" className='max-h-[350px]' />
             </div>
           </div>
-          <div ref={el => educationRefs.current[1] = el} className='w-full flex justify-between items-center px-40'>
+          <div ref={el => educationRefs.current[1] = el} className='w-full flex flex-col md:flex-row justify-between items-center lg:px-40'>
             <div className='w-1/2 flex justify-start'>
               <img src={college} alt="college" className='max-h-[350px]' />
             </div>
-            <div className='w-1/2 text-left text-2xl font-medium tracking-wide'>
-              <h1 className='text-3xl font-extrabold py-3'>Intermediate :</h1>
-              <h1>Sri Gayatri Junior College</h1>
-              <h1>Telangana State Board of Intermediate Education</h1>
-              <h1>2018 - 2020</h1>
-              <h1>CGPA - 8.64 / 10</h1>
+            <div className='w-full md:w-1/2 text-left text-2xl font-medium tracking-wide'>
+              <h1 className='text-2xl lg:text-3xl font-extrabold py-3'>Intermediate :</h1>
+              <h1 className='text-xl lg:text-2xl'>Sri Gayatri Junior College</h1>
+              <h1 className='text-xl lg:text-2xl'>Telangana State Board of Intermediate Education</h1>
+              <h1 className='text-xl lg:text-2xl'>2018 - 2020</h1>
+              <h1 className='text-xl lg:text-2xl'>CGPA - 8.64 / 10</h1>
             </div>
           </div>
-          <div ref={el => educationRefs.current[2] = el} className='w-full flex justify-between items-center px-40'>
-            <div className='w-1/2 text-left text-2xl font-medium tracking-wide'>
-              <h1 className='text-3xl font-extrabold py-3'>Secondary Education :</h1>
-              <h1>Covells High School</h1>
-              <h1>Board of Secondary Education, Telangana (BSET)</h1>
-              <h1>2017 - 2018</h1>
-              <h1>CGPA - 9.3 / 10</h1>
+          <div ref={el => educationRefs.current[2] = el} className='w-full flex flex-col-reverse md:flex-row justify-between items-center lg:px-40'>
+            <div className='w-full md:w-1/2 text-left text-2xl font-medium tracking-wide'>
+              <h1 className='text-2xl lg:text-3xl font-extrabold py-3'>Secondary Education :</h1>
+              <h1 className='text-xl lg:text-2xl'>Covells High School</h1>
+              <h1 className='text-xl lg:text-2xl'>Board of Secondary Education, Telangana (BSET)</h1>
+              <h1 className='text-xl lg:text-2xl'>2017 - 2018</h1>
+              <h1 className='text-xl lg:text-2xl'>CGPA - 9.3 / 10</h1>
             </div>
             <div className='w-1/2 flex justify-end'>
               <img src={school} alt="school" className='max-h-[350px]' />
@@ -247,22 +248,22 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className='w-full mt-14 flex flex-col items-center justify-center gap-7 px-40'>
-        <h1 ref={el => textRef.current[1] = el} className='text-4xl font-extrabold mt-5'>Skills</h1>
-        <div ref={buttonsRef} className='w-full h-36 flex justify-center gap-10 items-center mt-20'>
+      <div className='w-full mt-14 flex flex-col items-center justify-center gap-7 lg:px-40'>
+        <h1 ref={el => textRef.current[1] = el} className='text-3xl lg:text-4xl font-extrabold mt-5'>Skills</h1>
+        <div ref={buttonsRef} className='w-full h-36 flex justify-center gap-5 md:gap-10 items-center mt-5 lg:mt-20'>
             <div className='flex justify-center h-full items-center'>
                 <button 
                         onClick={prevSlide} 
-                        className={`relative left-0 p-2 w-10 h-10 rounded-full ${currentIndex === 0 ? 'bg-gray-200 text-gray-400 cursor-not-allowed' : 'bg-gray-600 text-white hover:bg-gray-500'}`}
+                        className={`relative left-0 text-center lg:p-2 w-6 h-6 md:w-10 md:h-10 rounded-full ${currentIndex === 0 ? 'bg-gray-200 text-gray-400 cursor-not-allowed' : 'bg-gray-600 text-white hover:bg-gray-500'}`}
                         disabled={currentIndex === 0}
                     >
                         {"<"}
                 </button>
             </div>
-            <div ref={el => skillRefs.current = el} className='grid grid-cols-5 w-full justify-center items-center gap-10'>
+            <div ref={el => skillRefs.current = el} className='grid grid-flow-col grid-cols-5 w-full justify-center items-center gap-5 lg:gap-10'>
         {skills.slice(currentIndex, currentIndex + itemsToShow).map((skill, index) => (
-                    <div key={index} className="skill-item flex justify-center items-center p-4">
-                        <img src={skill.image} alt={skill.name} className="w-full h-full object-contain" />
+                    <div key={index} className="skill-item flex object-cover justify-center items-center lg:p-4">
+                        <img src={skill.image} alt={skill.name} className="w-full h-full object-fill" />
                     </div>
                 ))}
                 
@@ -270,7 +271,7 @@ const About = () => {
             <div className='flex justify-center items-center'>
                     <button 
                         onClick={nextSlide} 
-                        className={`relative right-0 p-2 w-10 h-10 rounded-full ${currentIndex >= totalSkills - itemsToShow ? 'bg-gray-200 text-gray-400 cursor-not-allowed' : 'bg-gray-600 text-white hover:bg-gray-500'}`}
+                        className={`relative right-0 text-center lg:p-2 w-6 h-6 md:w-10 md:h-10 rounded-full ${currentIndex >= totalSkills - itemsToShow ? 'bg-gray-200 text-gray-400 cursor-not-allowed' : 'bg-gray-600 text-white hover:bg-gray-500'}`}
                         disabled={currentIndex >= totalSkills - itemsToShow}
                     >
                         {">"}

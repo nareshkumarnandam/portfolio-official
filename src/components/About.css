@@ -1,0 +1,18 @@
+.skill-slider-container {
+    overflow: hidden; /* Hide overflow to ensure smooth transitions */
+    width: 100%;
+    position: relative;
+}
+
+.skill-list {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.7s ease-in-out;
+    will-change: transform;
+}
+
+.skill-item {
+    flex: 0 0 calc(100% / 5 - 20px); /* Adjust based on items per row */
+    text-align: center;
+    transition: opacity 0.5s ease-in-out;
+}

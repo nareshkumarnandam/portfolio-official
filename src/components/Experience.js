@@ -23,7 +23,7 @@ const Experience = () => {
                     scrollTrigger: {
                         trigger: experienceRef.current,
                         start: 'top 80%',
-                        end: 'top 30%',
+                        end: 'top 60%',
                         scrub: true,
                     },
                 }
@@ -39,7 +39,7 @@ const Experience = () => {
                     scrollTrigger: {
                         trigger: vimzoRef.current,
                         start: 'top 80%',
-                        end: 'top 50%',
+                        end: 'top 60%',
                         scrub: true,
                     },
                 }
@@ -55,7 +55,7 @@ const Experience = () => {
                     scrollTrigger: {
                         trigger: logoRef.current,
                         start: 'top 80%',
-                        end: 'top 50%',
+                        end: 'top 60%',
                         scrub: true,
                     },
                 }
@@ -69,7 +69,7 @@ const Experience = () => {
                     scrollTrigger: {
                         trigger: logoRef.current,
                         start: 'top 80%',
-                        end: 'top 50%',
+                        end: 'top 60%',
                         scrub: true,
                     },
                 }
@@ -80,15 +80,15 @@ const Experience = () => {
     }, []);
 
     return (
-        <div id='experience' className='w-full flex flex-col items-center justify-center px-20 py-24 font-Architects'>
-            <h1 ref={experienceRef} className='text-5xl font-extrabold'>Experience</h1>
-            <div className='w-full flex flex-col items-center justify-center px-10 py-20'>
-                <h1 ref={vimzoRef} className='text-3xl font-bold'>Vizmo</h1>
-                <div className='w-full flex justify-center py-10'>
-                    <div ref={logoRef} className='w-1/2 object-cover flex justify-center'>
-                        <img src={vizmo} alt="vizmo" className='w-1/2 drop-shadow-xl' loading='lazy' />
+        <div id='experience' className='w-full flex flex-col items-center justify-center px-5 lg:px-20 pt-24 font-Architects'>
+            <h1 ref={experienceRef} className='text-3xl lg:text-5xl font-extrabold'>Experience</h1>
+            <div className='w-full flex flex-col items-center justify-center lg:px-10 py-6 lg:py-12'>
+                <h1 ref={vimzoRef} className='text-2xl lg:text-3xl font-bold'>Vizmo</h1>
+                <div className='w-full flex flex-col md:flex-row justify-center py-10'>
+                    <div ref={logoRef} className='w-full md:w-1/2 object-cover flex justify-center'>
+                        <img src={vizmo} alt="vizmo" className='w-1/2 object-contain drop-shadow-xl' loading='lazy' />
                     </div>
-                    <div ref={textRef} className='w-1/2 leading-10 flex flex-col justify-center items-start px-20 gap-4'>
+                    <div ref={textRef} className='w-full md:w-1/2  leading-10 flex flex-col justify-center items-start lg:px-20 py-10 md:py-0 gap-4'>
                         <h1 className='text-2xl font-medium'>Front-end Developer (Intern)</h1>
                         <p className='text-lg font-medium'>June 2024 - September 2024</p>
                         <h1 className='text-lg font-medium'>Key Responsibilities:</h1>

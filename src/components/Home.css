@@ -40,4 +40,8 @@
   .animate-pop-up {
     animation: pop-up 0.5s forwards;
   }
-  
+
+
+  .animate-pop-up-2{
+    animation: pop-up 0.3s forwards;
+  }
