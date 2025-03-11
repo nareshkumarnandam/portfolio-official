@@ -12,7 +12,7 @@ import Contact from './components/Contact';
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [isOnline, setIsOnline] = useState(navigator.onLine);
-  // const [isSlowNetwork, setIsSlowNetwork] = useState(false);
+  const [isSlowNetwork, setIsSlowNetwork] = useState(false);
 
   useEffect(() => {
     // Check the network status
@@ -20,14 +20,14 @@ function App() {
     const handleOffline = () => setIsOnline(false);
 
     // Check network type (slow network detection)
-    // const updateNetworkType = () => {
-    //   const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-    //   if (connection && connection.downlink < 1.5) { // Adjust threshold as needed for "slow" network
-    //     setIsSlowNetwork(true);
-    //   } else {
-    //     setIsSlowNetwork(false);
-    //   }
-    // };
+    const updateNetworkType = () => {
+      const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+      if (connection && connection.downlink < 1.5) { // Adjust threshold as needed for "slow" network
+        setIsSlowNetwork(true);
+      } else {
+        setIsSlowNetwork(false);
+      }
+    };
 
     // Event listeners for network status
     window.addEventListener('online', handleOnline);
